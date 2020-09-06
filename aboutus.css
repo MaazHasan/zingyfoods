@@ -1,0 +1,17 @@
+body{
+        
+    background-image: url("about.jpg");
+    background-size: cover;
+}
+h1{
+    text-overflow: ellipsis;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+ 
+    color:#fff;
+    text-align: center;
+    font-size: 60px;
+    
+p{
+    font-style: italic;
+    font-variant-position: 10px,10px;
+    color:white;
