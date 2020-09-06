@@ -1,2 +1,2 @@
 # zingyfoods
-A restaurent website for boosting restaurent business.
+A restaurant website for boosting restaurant business.
