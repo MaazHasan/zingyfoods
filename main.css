@@ -6,13 +6,30 @@
 body {
   font-family: cursive;
   line-height: 1.8;
+  margin: 0;
+}
+.title-text {
+  font-size: 40px;
+  text-align: center;
+}
+#menu-bar{
+  width 50px;
+  height: 10px;
+  margin: 50px:10px:10px:20px;
+  position: fixed;
+  cursor: pointer;
+}
+.bar1{
+width: 40px;
+height: 10px;
+transform: translateY(-4px);
 }
 /*======Header========*/
 
 .header {
   min-height: 100vh;
   background: repeating-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url(zingyfoods.jpg) center/cover no-repeat fixed;
+    url(Zzingyfoods.jpg) center/cover no-repeat fixed;
   margin-top: auto;
 }
 .hero {
@@ -27,7 +44,8 @@ body {
 }
 p {
   position: absolute;
-  color: rgb(250, 182, 56);
+  color: rgba(0, 0, 0, 0.849);
+  font-size: 13px;
 }
 
 .dusraP {
@@ -37,6 +55,7 @@ p {
 .hero .title {
   color: #fff;
   font-size: 75px;
+ 
 }
 .hero-button {
   display: inline-block;
@@ -47,6 +66,7 @@ p {
   font-weight: bold;
   background: rgb(255, 166, 0);
   color: #fff;
+  font-size: 15px;
   cursor: pointer;
   border: 1.5px solid orange;
   margin-top: 10px;
@@ -72,4 +92,90 @@ p {
   100% {
     opacity: 0.3;
   }
+}
+/*****ABOUT US*******/
+#about {
+  padding: 0PX;
+  margin: 0px;
+  background-color: rgb(255, 255, 255);
+  }
+.about {
+  padding: 0px 160px;
+  margin:  0px;
+  position: relative;
+}
+.about-icon .fas {
+  font-size: 50px;
+  color: rgb(253, 6, 6);
+  margin-right: 50px;
+}
+.about-subtitle {
+  text-transform: capitalize;
+  color: brown;
+  font-size: 25px;
+}
+.about-info {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.about-subtitle {
+  margin-left:  0px;
+}
+.about-info{
+  margin-left:  5px;
+  text-align: start;
+  text-shadow: rgb(255, 166, 0);
+}
+.about-icon:hover .fa,
+.about-subtitle:hover {
+  transition: transform 0.5s ease, color 0.5s ease;
+  transform: translateX(10px);
+  color: orangered;
+  cursor: pointer;
+}
+@media screen and (min-width: 576px) {
+  .about-center {
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: first baseline;
+  }
+  .about {
+    flex: 0 0 calc(50% 16px);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .about {
+    flex: 0 0 calc(33.3% 16px);
+  }
+}
+/****END OF ABOUT US******/
+
+/*********Menu Section**/
+.menu-image {
+  min-height: 80vh;
+  background: url(menu.jpg) center/cover fixed no-repeat;
+}
+.menu{
+  text-align: center;
+  font-size: 10px;
+}
+.menu-{
+
+}
+
+/*********End of Menu section***/
+.nav {
+  margin-top: 50px;
+}
+
+.nav a {
+  color:#fff;
+  font-size: 30px;
+
+}
+
+.since  {
+  color: darkorange;
+
 }
