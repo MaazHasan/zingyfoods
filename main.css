@@ -29,7 +29,7 @@ transform: translateY(-4px);
 .header {
   min-height: 100vh;
   background: repeating-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url(Zzingyfoods.jpg) center/cover no-repeat fixed;
+    url(zingyfoods.jpg) center/cover no-repeat fixed;
   margin-top: auto;
 }
 .hero {
@@ -55,7 +55,7 @@ p {
 .hero .title {
   color: #fff;
   font-size: 75px;
- 
+
 }
 .hero-button {
   display: inline-block;
@@ -137,7 +137,7 @@ p {
   .about-center {
     height: 450px;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: first baseline;
   }
   .about {
