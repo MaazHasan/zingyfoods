@@ -1,0 +1,141 @@
+body {
+  min-height: 100vh;
+  background: repeating-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(zingyfoods.jpg) center/cover no-repeat fixed;
+  margin-top: auto;
+}
+
+header {
+  padding: 30px;
+  position: sticky;
+}
+
+section {
+  padding: 50px;
+  height: 100vh;
+}
+
+.nav {
+  text-align: right;
+}
+
+.nav li {
+  display: inline;
+  margin-left: 20px;
+}
+
+.nav a {
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.since {
+  color: darkorange;
+  position: absolute;
+}
+
+.hero {
+  height: 100vh;
+  text-align: center;
+}
+
+.hero-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 100px;
+  background: rgb(255, 166, 0);
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.hero-button:hover {
+  background: #000;
+  color: rgb(255, 166, 0);
+}
+
+.pulsate:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.pulsate {
+  animation: pulse 3s ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 0.3;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/*****ABOUT US*******/
+#about {
+  background-color: #fff;
+}
+
+#about h2 {
+  color: rgb(253, 6, 6);
+}
+
+#about p {
+  color: rgba(0, 0, 0, 0.849);
+  font-size: 16px;
+}
+
+.about-icon .fas {
+  font-size: 50px;
+  color: rgb(253, 6, 6);
+}
+
+.about-subtitle {
+  text-transform: capitalize;
+  color: rgb(253, 6, 6);
+  font-size: 25px;
+}
+
+.about-info {
+  margin-top: 10px;
+  line-height: 1.5;
+  margin-left: 5px;
+  text-align: start;
+  text-shadow: rgb(255, 166, 0);
+}
+
+.about-icon:hover .fa,
+.about-subtitle:hover {
+  transition: transform 0.5s ease, color 0.5s ease;
+  transform: translateX(10px);
+  color: orangered;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 576px) {
+  .about-grid {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+}
+/****END OF ABOUT US******/
