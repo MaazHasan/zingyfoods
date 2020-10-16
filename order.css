@@ -1,0 +1,60 @@
+.bg {
+  background-image: url(place-order-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#order {
+  font-size: 30px;
+}
+.order {
+  font-size: 20px;
+}
+.order-online {
+  padding: 40px;
+}
+
+input[type="text"] {
+  width: 45%;
+  padding: 12px 20px;
+  border: 1px solid rgb(253, 186, 1);
+  border-radius: 30px;
+  margin-left: 70px;
+}
+
+input:focus {
+  border-radius: 30px;
+}
+.para {
+  font-size: 25px;
+  text-shadow: grey;
+  color: rgb(141, 19, 19);
+  margin-left: 79px;
+  margin-top: 50px;
+}
+.hero-button {
+  font-size: 1cm;
+}
+.footer {
+  width: 100%;
+  background-color: rgb(19, 9, 9);
+  color: rgb(199, 36, 36);
+  text-align: center;
+  font-size: 56px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 35px;
+}
+.Order-now {
+  font-size: 6px;
+}
+.hero-button1 {
+  color: rgb(255, 255, 255);
+  margin-left: 20%;
+}
+.hero-button2 {
+  color: rgb(255, 255, 255);
+  margin-left: 2%;
+  box-shadow: floralwhite;
+}
