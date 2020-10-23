@@ -9,12 +9,10 @@
     />
     <link rel="stylesheet" type="text/css" href="main.css" />
     <link rel="stylesheet" href="order.css" />
-    <script src="./js/menu.js" type="module"></script>
+    <script src="./js/add-to-cart.js" type="module"></script>
   </head>
-
-  <!---body section--->
   <body>
-    <div class="bg" style="height: 100vh">
+    <!-- <div class="bg" style="height: 100vh">
       <section id="order">
         <h1 class="order-online">Order Online</h1>
         <p class="para">We will deliver right to your door</p>
@@ -23,9 +21,63 @@
         <a href="./place-order.html" class="hero-button2">Order for Later</a>
       </section>
     </div>
-    <!-- <div class="footer">
+    <div class="footer">
       <p>Footer</p>
     </div> -->
+    <div class="bg" style="height: 100vh">
+      <h2 class="order-online">Order Online</h2>
+      <div class="container row">
+        <div class="menu">
+          <ul class="list"></ul>
+        </div>
+
+        <div class="cart">
+          <div class="cart-header flex-row">
+            <div class="">
+              Your Cart : <span class="item-count">0</span> Items
+            </div>
+            <div class="icon">
+              <img
+                src="https://s3-ap-southeast-1.amazonaws.com/assets.limetray.com/assets/order-online/images/shopping-cart.svg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="no-items">
+            <div>
+              <img
+                ng-src="https://s3-ap-southeast-1.amazonaws.com/assets.limetray.com/assets/order-online/images/empty-cart.svg"
+                alt=""
+                src="https://s3-ap-southeast-1.amazonaws.com/assets.limetray.com/assets/order-online/images/empty-cart.svg"
+              />
+            </div>
+            <div class="bold ng-binding">Your cart is empty.</div>
+            <div class="hint ng-binding">
+              Looks like you haven’t added any items yet.
+            </div>
+            <!-- end ngIf: !vm.loyaltyEnabled -->
+          </div>
+          <div class="total-container hidden">
+            <div class="summary">
+              <div class="item flex-row">
+                <div class="key ng-binding">Subtotal</div>
+                <div class="value ng-binding">₹0</div>
+              </div>
+            </div>
+            <div class="final-total flex-row">
+              <div class="">Total</div>
+              <div class="value">₹0</div>
+            </div>
+          </div>
+          <div
+            click="proceed()"
+            class="checkout"
+            ng-class="{'loading': vm.showProceedLoader}"
+          >
+            Proceed To Checkout
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-  <!---end of body section-->
 </html>
