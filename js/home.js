@@ -9,7 +9,6 @@ function scrollToTop() {
 }
 
 window.onscroll = function () {
-  console.log("Button", btn.classl);
   if (window.pageYOffset > 300) {
     btn.classList.add("show");
   } else {
