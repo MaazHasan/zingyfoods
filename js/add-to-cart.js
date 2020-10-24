@@ -1,10 +1,14 @@
 // import mockData from "./mock-data.json";
+
 window.onload = () => {
-  var itemCount = 5;
-  const $List = document.querySelector(".list");
-  const $ItemCount = document.querySelector(".item-count");
-  const $NoItems = document.querySelector(".no-items");
-  const $TotalContainer = document.querySelector(".total-container");
+  const $ = (selector) => document.querySelector(selector);
+
+  const cartItems = [];
+  const $List = $(".list");
+  const $ItemCount = $(".item-count");
+  const $NoItems = $(".no-items");
+  const $TotalContainer = $(".total-container");
+  const $Total = $(".total");
 
   const mockData = [
     { name: "Aloo Tikka Roll", price: 230 },
@@ -26,16 +30,46 @@ window.onload = () => {
                 <div>${name}</div>
                 <div class="price-container flex-row">
                   <div class="itemPrice">&#8377; ${price}</div>
-                  <button class="add-btn">Add</button>
+                  <button class="add-btn" data-price=${price}>ADD</button>
                 </div>
               </div>
             </li>`;
   });
-  console.log(menuItems);
+
   $List.innerHTML = menuItems.join("");
-  $ItemCount.innerHTML = itemCount;
-  if (itemCount > 0) {
-    $NoItems.classList.toggle("hidden");
-    $TotalContainer.classList.toggle("hidden");
-  }
+
+  const btns = document.querySelectorAll(".add-btn");
+  btns.forEach((btn) => {
+    // btn.onclick = addItemToCart; // why it does not work
+    btn.addEventListener("click", function (e) {
+      addItemToCart(e);
+      updateCart();
+    });
+  });
+
+  const addItemToCart = function (e) {
+    const itemPrice = e.target.dataset.price;
+    cartItems.push({ price: itemPrice });
+  };
+
+  const updateCart = function () {
+    if (cartItems.length > 0) {
+      toggleCartView();
+    }
+    const cartItemsPrice = cartItems.map((item) => {
+      return Number(item.price);
+    });
+    const total = cartItemsPrice.reduce((acc, cur) => {
+      return acc + cur;
+    });
+    $ItemCount.innerHTML = cartItems.length;
+    $Total.innerHTML = `₹${total}`;
+  };
+
+  const toggleCartView = function () {
+    if ($TotalContainer.classList.contains("hidden")) {
+      $NoItems.classList.toggle("hidden");
+      $TotalContainer.classList.toggle("hidden");
+    }
+  };
 };
