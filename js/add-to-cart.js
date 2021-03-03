@@ -8,7 +8,10 @@ window.onload = () => {
   const $ItemCount = $(".item-count");
   const $NoItems = $(".no-items");
   const $TotalContainer = $(".total-container");
+  const $SubTotal = $(".sub-total");
+  const $GST = $(".gst");
   const $Total = $(".total");
+  const GST_RATE = 0.12;
 
   const mockData = [
     { name: "Aloo Tikka Roll", price: 230 },
@@ -59,11 +62,17 @@ window.onload = () => {
     const cartItemsPrice = cartItems.map((item) => {
       return Number(item.price);
     });
-    const total = cartItemsPrice.reduce((acc, cur) => {
+    const subTotal = cartItemsPrice.reduce((acc, cur) => {
       return acc + cur;
     });
+
+    const GST = Number(subTotal * GST_RATE).toFixed(2);
+    const total = Number(subTotal) + Number(GST);
+
     $ItemCount.innerHTML = cartItems.length;
-    $Total.innerHTML = `₹${total}`;
+    $SubTotal.innerHTML = `${subTotal.toFixed(2)}`;
+    $GST.innerHTML = `${GST}`;
+    $Total.innerHTML = `₹${total.toFixed(2)}`;
   };
 
   const toggleCartView = function () {
