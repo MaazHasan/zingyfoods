@@ -11,6 +11,8 @@ window.onload = () => {
   const $SubTotal = $(".sub-total");
   const $GST = $(".gst");
   const $Total = $(".total");
+  const $CheckoutBtn = $(".checkout");
+
   const GST_RATE = 0.12;
 
   const mockData = [
@@ -48,6 +50,10 @@ window.onload = () => {
       addItemToCart(e);
       updateCart();
     });
+  });
+
+  $CheckoutBtn.addEventListener("click", function (e) {
+    window.location = "login";
   });
 
   const addItemToCart = function (e) {

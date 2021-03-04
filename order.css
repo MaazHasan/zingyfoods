@@ -40,7 +40,7 @@
 .list li {
   list-style: none;
   height: 140px;
-  width: 50%;
+  width: 100%;
   padding: 0 10px;
 }
 
@@ -103,9 +103,18 @@
 
 .checkout {
   background-color: #fdba01;
-  padding: 10px;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
   text-align: center;
   cursor: pointer;
+}
+
+.checkout:hover {
+  background: #000;
+  color: #fdba01;
 }
 
 input[type="text"] {
@@ -152,4 +161,10 @@ input:focus {
   color: rgb(255, 255, 255);
   margin-left: 2%;
   box-shadow: floralwhite;
+}
+
+@media screen and (min-device-width: 426px) {
+  .list li {
+    width: 50%;
+  }
 }
