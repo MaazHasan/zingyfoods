@@ -1,3 +1,4 @@
+
 body {
   min-height: 100vh;
   background: repeating-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -88,26 +89,26 @@ section {
 
 /*****ABOUT US*******/
 #about {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
 }
 
 #about h2 {
-  color: rgb(253, 6, 6);
+  color: rgb(253, 138, 6);
 }
 
 #about p {
-  color: rgba(0, 0, 0, 0.849);
+  color: rgba(29, 29, 29, 0.849);
   font-size: 16px;
 }
 
 .about-icon .fas {
   font-size: 50px;
-  color: rgb(253, 6, 6);
+  color: rgb(253, 138, 6);
 }
 
 .about-subtitle {
   text-transform: capitalize;
-  color: rgb(253, 6, 6);
+  color: rgb(253, 138, 6);
   font-size: 25px;
 }
 
@@ -116,7 +117,7 @@ section {
   line-height: 1.5;
   margin-left: 5px;
   text-align: start;
-  text-shadow: rgb(255, 166, 0);
+  text-shadow: rgb(253, 138, 6);
 }
 
 .about-icon:hover .fa,
@@ -169,9 +170,38 @@ section {
   background-color: #333;
 }
 #back-to-top:active {
-  background-color: #555;
+  background-color: #555; 
 }
 #back-to-top.show {
   opacity: 1;
   visibility: visible;
+}
+
+.page-wrapper{
+  min-height: 100%;
+}
+/***footer***/
+
+.footer{
+  background: rgb(32, 32, 32);
+color: rgb(255, 255, 255);
+height: 400px;
+position: relative;
+}
+.footer .footer-content .footer-content{
+  flex: 1;
+  padding: 20px;
+  border: 1px solid white;
+  border: 1px solid rgb(255, 255, 255);
+  height: 400px;
+  display: flex;
+}
+ .footer-bottom {
+  background: #222221;
+  color: beige;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  
+padding-top: 20px ;
 }
