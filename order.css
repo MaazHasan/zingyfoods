@@ -3,20 +3,124 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-#order {
-  font-size: 30px;
-}
-.order {
-  font-size: 20px;
-}
+
 .order-online {
-  padding: 40px;
+  padding: 0 75px;
+  text-align: left;
+}
+
+.container {
+  width: 100%;
+  padding-right: 64px;
+  padding-left: 64px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.menu {
+  color: #000;
+  height: 450px;
+  overflow: auto;
+  float: left;
+  width: 65%;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+}
+
+.list li {
+  list-style: none;
+  height: 140px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.menu-item {
+  /* border: 1px solid #fdba01; */
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.16);
+  height: 100%;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.price-container {
+  margin-top: 30px;
+}
+
+.add-btn {
+  background-color: crimson;
+  border-radius: 5px;
+  border: none;
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cart {
+  background-color: #fff;
+  color: #fff;
+  float: right;
+  width: 30%;
+  height: auto;
+}
+
+.cart-header {
+  background-color: #fdba01;
+  padding: 10px 20px;
+}
+
+.no-items {
+  color: gray;
+  text-align: center;
+  padding: 20px;
+}
+
+.total-container {
+  padding: 20px;
+  color: #000;
+}
+
+.final-total {
+  font-weight: bold;
+  border-top: 2px solid #000;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout {
+  background-color: #fdba01;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.checkout:hover {
+  background: #000;
+  color: #fdba01;
 }
 
 input[type="text"] {
   width: 45%;
   padding: 12px 20px;
-  border: 1px solid rgb(253, 186, 1);
+  border: 1px solid #fdba01;
   border-radius: 30px;
   margin-left: 70px;
 }
@@ -57,4 +161,10 @@ input:focus {
   color: rgb(255, 255, 255);
   margin-left: 2%;
   box-shadow: floralwhite;
+}
+
+@media screen and (min-device-width: 426px) {
+  .list li {
+    width: 50%;
+  }
 }
