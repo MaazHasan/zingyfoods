@@ -60,22 +60,20 @@
           <div class="total-container hidden">
             <div class="summary">
               <div class="item flex-row">
-                <div class="key">Subtotal</div>
-                <div class="value">₹0</div>
+                <div class="">Subtotal</div>
+                <div class="sub-total">₹0</div>
               </div>
+            </div>
+            <div class="item flex-row">
+              <div class="">GST @ 1.2%</div>
+              <div class="gst">₹0</div>
             </div>
             <div class="final-total flex-row">
               <div class="">Total</div>
               <div class="total"></div>
             </div>
           </div>
-          <div
-            click="proceed()"
-            class="checkout"
-            ng-class="{'loading': vm.showProceedLoader}"
-          >
-            Proceed To Checkout
-          </div>
+          <button class="checkout">Proceed To Checkout</button>
         </div>
       </div>
     </div>
