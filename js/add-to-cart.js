@@ -16,41 +16,64 @@ window.onload = () => {
   const GST_RATE = 0.12;
 
   const mockData = [
-    { name: "Aloo Tikka Roll", price: 230 },
-    { name: "Veg Haryali Roll", price: 230 },
-    { name: "Paneer Tikka Roll", price: 250 },
-    { name: "Soya Tikka Roll", price: 240 },
-    { name: "Dal Makhani", price: 175 },
-    { name: "Paneer Zaika", price: 260 },
-    { name: "Soya Tawa Masala", price: 230 },
-    { name: "Veg Biryani", price: 220 },
-    { name: "Chicken Tikka Roll", price: 280 },
-    { name: "Chicken Seekh Roll", price: 270 },
-    { name: "Chicken Malai Tikka Roll", price: 300 },
+    { name: "Aloo Tikka Roll", img: "", price: 230 },
+    { name: "Veg Haryali Roll", img: "", price: 230 },
+    { name: "Paneer Tikka Roll", img: "", price: 250 },
+    { name: "Soya Tikka Roll", img: "", price: 240 },
+    { name: "Dal Makhani", img: "", price: 175 },
+    { name: "Paneer Zaika", img: "", price: 260 },
+    { name: "Soya Tawa Masala", img: "", price: 230 },
+    { name: "Veg Biryani", img: "", price: 220 },
+    { name: "Chicken Tikka Roll", img: "", price: 280 },
+    { name: "Chicken Seekh Roll", img: "", price: 270 },
+    { name: "Chicken Malai Tikka Roll", img: "", price: 300 },
   ];
 
-  const menuItems = mockData.map(({ name, price }) => {
-    return `<li>
-              <div class="menu-item">
-                <div>${name}</div>
-                <div class="price-container flex-row">
-                  <div class="itemPrice">&#8377; ${price}</div>
-                  <button class="add-btn" data-price=${price}>ADD</button>
-                </div>
-              </div>
-            </li>`;
-  });
-
-  $List.innerHTML = menuItems.join("");
-
-  const btns = document.querySelectorAll(".add-btn");
-  btns.forEach((btn) => {
-    // btn.onclick = addItemToCart; // why it does not work
-    btn.addEventListener("click", function (e) {
-      addItemToCart(e);
-      updateCart();
+  fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=Indian")
+    .then((data) => data.json())
+    .then((data) => {
+      const itemsData = data.meals.map(
+        ({ strMeal, strMealThumb, idMeal }, index) => {
+          return {
+            name: strMeal,
+            img: strMealThumb,
+            price: mockData[index] ? mockData[index].price : mockData[0].price,
+          };
+        }
+      );
+      getMenuCard(itemsData);
+    })
+    .catch(() => {
+      getMenuCard(mockData);
     });
-  });
+
+  const getMenuCard = (data) => {
+    const menuItems = data.map(({ name, img, price }) => {
+      return `<li>
+                <div class="menu-item">
+                  <div>${name}</div>
+                  <img src="${img}" width="100%" style="object-fit: cover"/>
+                  <div class="price-container flex-row">
+                    <div class="itemPrice">&#8377; ${price}</div>
+                    <button class="add-btn" data-price=${price}>ADD</button>
+                  </div>
+                </div>
+              </li>`;
+    });
+    $List.innerHTML = menuItems.join("");
+    addListnerToAddButton();
+  };
+
+  const addListnerToAddButton = () => {
+    const btns = document.querySelectorAll(".add-btn");
+    btns.forEach((btn) => {
+      // btn.onclick = addItemToCart; // why it does not work
+      btn.addEventListener("click", function (e) {
+        addItemToCart(e);
+        updateCart();
+      });
+    });
+  };
 
   $CheckoutBtn.addEventListener("click", function (e) {
     window.location = "login";
